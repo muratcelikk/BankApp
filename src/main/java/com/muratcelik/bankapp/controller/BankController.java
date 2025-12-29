@@ -1,6 +1,5 @@
 package com.muratcelik.bankapp.controller;
 
-import com.muratcelik.bankapp.repository.AccountRepository;
 import com.muratcelik.bankapp.service.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +15,6 @@ public class BankController {
 
     @Autowired
     private TransferService transferService;
-
-    @Autowired
-    private AccountRepository accountRepository;
 
     @PostMapping("/transfer")
     public String transfer(@RequestParam Long from, @RequestParam Long to, @RequestParam BigDecimal amount) {
